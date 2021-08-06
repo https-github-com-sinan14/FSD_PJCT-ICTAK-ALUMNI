@@ -1,0 +1,29 @@
+<h1>Applied Jobs List:</h1>
+<table id="excel-table">
+  
+
+  <ul *ngFor="let product of applicants">
+    <li>{{product.orderdetails.jobtitle}}</li>
+    <li>{{product.orderdetails.company}}</li>
+    <li>{{product.qualifications}}</li>
+    <li>{{product.skills}}</li>
+  </ul>
+
+
+
+ 
+    <!-- <tr *ngFor="let product of applicants">
+      <td class="column100 column2" data-column="column2">{{product.orderdetails.jobtitle}}</td>
+      <td class="column100 column3" data-column="column3">{{product.orderdetails.company}}</td>
+      <td class="column100 column4" data-column="column4">{{product.Applicantfname}} {{product.Applicantlname}}</td>
+      <td class="column100 column5" data-column="column5">{{product.applicant_email}}</td>
+      <td class="column100 column6" data-column="column6">{{product.phone}}</td>
+      <td class="column100 column7" data-column="column7">{{product.qualifications}}</td>
+      <td class="column100 column7" data-column="column7">{{product.skills}}</td>
+      <td class="column100 column7" data-column="column7">{{product.experience}}</td>
+      <td class="column100 column7" data-column="column7">{{product.orderdetails.posted_by}}</td>
+      <td class="column100 column7" data-column="column7">{{product.orderdetails.postOwner}}</td>
+      <td class="column100 column7" data-column="column7">{{product.orderdetails.email}}</td>
+      <td>
+    </tr> -->
+  </table>

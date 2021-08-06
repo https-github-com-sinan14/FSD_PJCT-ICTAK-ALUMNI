@@ -1,0 +1,70 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-stepper-horizontal {
+  margin-top: 0px;
+  background-color: #f0f3f4;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+/* ::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: green; 
+} */
+.green-color {
+  color:green;
+  }
+  .teal-color {
+  color:rgb(159, 219, 159);
+  }
+  #ctr{
+    margin-right: 7%;
+  }
+.btn btn-primary{
+  float:right
+}
+#profile{
+  padding: 5%;
+  padding-left: 6%;
+  width: 100%;
+}
+.button {
+  border-radius: 4px;
+  background-color: #5d48b9;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 15px;
+  width: 90px;
+  
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}

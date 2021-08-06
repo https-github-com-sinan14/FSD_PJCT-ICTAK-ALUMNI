@@ -1,0 +1,175 @@
+<div id="profile">
+ <div> <h2>You are Applying For Job ID:"{{this.showid}}"</h2>
+</div>
+ 
+ <mat-stepper linear #stepper id="ctr">
+   <mat-step [stepControl]="firstFormGroup" label="Personal Information">
+     <form [formGroup]="firstFormGroup" (ngSubmit)="onSubmit()" id="form1">
+       <!-- <ng-template matStepperIcon="keyboard_arrow_right"><mat-icon>Fill in your details</mat-icon></ng-template> -->
+       <ng-template matStepperIcon="edit"><i class="fa fa-check-circle fa-3x teal-color"></i></ng-template>
+       <mat-form-field appearance="fill">
+         <mat-label>First Name</mat-label>
+         <input matInput placeholder="First name" name="firstCtrl" formControlName="firstCtrl"  [(ngModel)]="firstCtrl" required>       
+       </mat-form-field>
+       <mat-form-field appearance="fill">
+         <mat-label>Last Name</mat-label>
+         <input matInput placeholder="Last name" formControlName="lastName" [(ngModel)]="lastName" required>                
+       </mat-form-field><br><br>
+       <mat-form-field appearance="fill">
+       <mat-label>Email ID</mat-label>
+         <input matInput placeholder="Email id" formControlName="email" [(ngModel)]="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+      </div>      
+        </mat-form-field><br><br>
+      <mat-form-field appearance="fill">
+         <mat-label>Contact no</mat-label>
+           <input matInput placeholder="Phone number" formControlName="phone" [(ngModel)]="phone" required>
+           <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+            <div *ngIf="f.phone.errors.required">Phone number required :valid formats XXX-XXX-XXXX, XXX.XXX.XXXX, XXX XXX XXXX </div>
+            <!-- <div *ngIf="f.phone.errors.minlength">ph number must be a valid format</div> -->
+        </div>        
+          </mat-form-field><br><br>
+       <div>
+         <button class="button" mat-button matStepperNext><span>Next</span></button>
+       </div>
+     </form>
+   </mat-step>
+   <mat-step [stepControl]="secondFormGroup">
+     <form [formGroup]="secondFormGroup"  (ngSubmit)="onSubmit2()" id="form2">
+     
+      <input type="file" (change)="upload($event)"  name="image" class="form-control"formControlName="secondCtrl" [(ngModel)]="image"  id="image"  required>
+    
+       <ng-template matStepLabel>Upload Resume</ng-template>
+       <!-- <mat-form-field appearance="fill">
+         <mat-label>Upload Resume</mat-label>
+          <input matInput formControlName="secondCtrl" [(ngModel)]="secondCtrl" required> 
+       </mat-form-field><br><br> -->
+       <mat-form-field appearance="fill">
+        <mat-label>Highest qualification</mat-label>
+        <input matInput placeholder="" formControlName="qualifications" [(ngModel)]="qualifications" required>                
+      </mat-form-field>
+      <br><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Skills</mat-label>
+        <input matInput placeholder="" formControlName="skills" [(ngModel)]="skills" required>                
+      </mat-form-field><br><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Experience:(Years)</mat-label>
+        <input matInput placeholder="" formControlName="experience" [(ngModel)]="experience" required>                
+      </mat-form-field>
+       <div>
+         <button class="button" mat-button matStepperPrevious><span>Back</span></button>
+         <button class="button" mat-button matStepperNext><span>Next</span></button>
+       </div>
+     </form>
+   </mat-step>
+   <mat-step>
+    
+   
+     <ng-template matStepLabel>Review</ng-template>
+     <h2>You are now done</h2>
+    <div class="col-md-8">
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0" style="font-size:20px;">Full Name</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              {{firstCtrl}} {{lastName}}
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0" style="font-size:20px;">Email</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              {{email}}
+            </div>
+          </div>
+          <hr>
+          
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0" style="font-size:20px;">Mobile</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              {{phone}}
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0" style="font-size:20px;">Resume</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              {{image}}
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0" style="font-size:20px;">Qualification</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              {{qualifications}}
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0" style="font-size:20px;">Key Skills</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              {{skills}}
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0" style="font-size:20px;">Experience(in Years)</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              {{experience}}
+            </div>
+          </div>
+          <hr>
+          <!-- <div class="row">
+            <div class="col-sm-3">
+              <h6 class="mb-0" style="font-size:20px;">Resume</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              {{ resumeName }}
+            </div>
+          </div>
+          <hr> -->
+          
+
+        </div>
+      </div>
+
+      <div class="row gutters-sm">
+        
+   
+      </div>
+
+
+
+    </div>
+     
+     <div>
+       <button mat-button matStepperPrevious>Back</button>
+       <button mat-button (click)="stepper.reset()">Reset</button>
+       <button class="btn btn-primary"(click)="jobsubmit()" class="button"><span>Register</span></button>
+    
+     </div>
+    
+   
+   </mat-step>
+ </mat-stepper>
+ 
+
+<div>

@@ -1,0 +1,63 @@
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="true">
+      <mat-nav-list>
+        <div class="left-bg">
+        <mat-list-item>
+           
+          <mat-icon mat-list-icon class="chevron-button sidenav-button" (click)="isExpanded = !isExpanded" [ngClass]="{'rotated': isExpanded}">chevron_right</mat-icon>
+        </mat-list-item>
+         </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <div class="photo">
+          <img alt="Profile photo" src="/assets/img/profileimg.jpg"/> </div>
+          <!-- <div class="ctt">
+          <div class="wrapper"><input type="file" class="my_file"/></div>
+          </div> -->
+         <mat-list-item [routerLink]="'editprofile'">         
+          <mat-icon mat-list-icon>supervisor_account</mat-icon>
+          <span *ngIf="isExpanded">Profile</span>
+          <mat-icon mat-list-icon class="chevron-button1 sidenav-button" (click)="isExpanded1 = !isExpanded1" [ngClass]="{'rotated': isExpanded1}">chevron_right</mat-icon>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item  [routerLink]="'alumnidashboard'">
+          <mat-icon mat-list-icon >home</mat-icon>
+          <span *ngIf="isExpanded">Dashboard</span>
+          <mat-icon mat-list-icon class="chevron-button1 sidenav-button" (click)="isExpanded1 = !isExpanded1" [ngClass]="{'rotated': isExpanded1}">chevron_right</mat-icon>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item [routerLink]="'view_jobs'">
+          <mat-icon mat-list-icon>important_devices</mat-icon>
+          <span *ngIf="isExpanded">View Jobs</span>  
+          <mat-icon mat-list-icon class="chevron-button1 sidenav-button" (click)="isExpanded1 = !isExpanded1" [ngClass]="{'rotated': isExpanded1}">chevron_right</mat-icon>
+        </mat-list-item>
+        
+        <mat-list-item [routerLink]="'history'">
+          <mat-icon mat-list-icon>supervisor_account</mat-icon>
+          <span *ngIf="isExpanded">Saved jobs</span>
+          <mat-icon mat-list-icon class="chevron-button1 sidenav-button" (click)="isExpanded1 = !isExpanded1" [ngClass]="{'rotated': isExpanded1}">chevron_right</mat-icon>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item [routerLink]="'pswdchange'">
+          <mat-icon mat-list-icon>supervisor_account</mat-icon>
+          <span *ngIf="isExpanded">Reset password</span>
+          <mat-icon mat-list-icon class="chevron-button1 sidenav-button" (click)="isExpanded1 = !isExpanded1" [ngClass]="{'rotated': isExpanded1}">chevron_right</mat-icon>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+       
+  
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <div class="content">
+      <mat-toolbar>
+      
+        <h4></h4>
+      </mat-toolbar>
+      <div class="contentwrapper">
+        <h2>Welcome &nbsp;{{name}}</h2>
+        <router-outlet></router-outlet>
+      </div>
+     
+    </div>
+  
+  </mat-sidenav-container>

@@ -1,0 +1,47 @@
+mat-sidenav-container {
+    height: 200%;
+    overflow:hidden;
+    
+    
+}
+mat-sidenav{
+    height: 100%;
+    width: 18%;
+    
+    
+   
+}
+
+mat-sidenav-container mat-sidenav mat-nav-list .chevron-button,mat-sidenav-container mat-sidenav mat-nav-list .chevron-button1 {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+    right: 0;
+    float: right;
+    position: absolute;
+  }
+  mat-sidenav-container mat-sidenav mat-nav-list .chevron-button.rotated,  mat-sidenav-container mat-sidenav mat-nav-list .chevron-button1.rotated  {
+    transform: rotate(180deg);
+  }
+  
+  mat-list-item{
+ align-self: center;
+  }
+  .left-bg {
+    background: url('../../../../../assets/img/left-bg.png');
+    background-repeat: no-repeat;
+    height: 100px;
+    left: 0;
+    padding-top: 12px;
+    position: relative;
+    margin-left: -2px;
+  }
+  #icon{
+    padding-left: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }

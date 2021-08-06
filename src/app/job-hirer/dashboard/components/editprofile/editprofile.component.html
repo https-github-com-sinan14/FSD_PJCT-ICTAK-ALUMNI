@@ -1,0 +1,60 @@
+<div id="banner">
+    <h4>UPDATE PROFILE DETAILS</h4>
+</div>
+<div id="profile" >
+         
+   
+            <br>
+            <div class="photo">
+                <img alt="Profile photo" src="/assets/img/profileimg.jpg"/> </div>
+         
+          
+          
+        
+
+        
+       
+        <br><br>
+        <div>
+          <form>
+            <h2>Personal Information</h2>
+            <label for="Name" style="float: left;width: 963px; font-size:larger;">First Name</label>
+            <input type="text" [(ngModel)]="user.firstname" [ngModelOptions]="{standalone: true}" size="50">
+            
+            <br><br>
+            <label for="Name" style="float: left;width: 963px; font-size:larger;" >Last Name</label>
+            <input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.lastname" size="50" >
+            <br><br>
+            <label for="EMAIL ID"  style="float: left;width: 963px; font-size:larger;">Company Type:</label><br>
+            <input type="text"  [ngModelOptions]="{standalone: true}" [(ngModel)]="user.companytype" size="50">
+            <br><br>
+            <label for="EMAIL ID" style="float: left;width: 967px; font-size:larger;">Email Id:</label><br>
+            <input type="text" [disabled]="true" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.user_email" size="50">
+            <br><br>
+            <label for="contact" style="float: left;width: 1037px; font-size:larger;">Contact Number:</label><br>
+            <input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.phone_number" size="50">
+            <br><br>
+            <label for="EMAIL ID"  style="float: left;width: 963px; font-size:larger;">Job Title</label><br>
+            <input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.jobtitle" size="50" >
+            <br><br>
+            <label for="EMAIL ID"  style="float: left;width: 963px; font-size:larger;"> Website Address</label><br>
+            <input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.website" size="50" >
+            <br><br>
+            
+            </form>
+        </div>
+        <br><br>
+        <button style="width: 300px;;" class="btn btn-lg btn-success" (click)="onSubmit()" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> UPDATE</button>
+</div>                 
+    
+
+    
+   
+
+   
+
+    
+                  
+    
+   
+

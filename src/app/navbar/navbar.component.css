@@ -1,0 +1,29 @@
+.navbar .photo{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.navbar .photo img{
+    width: 100%;
+}
+.logo{
+    padding: 0%;
+   
+}
+
+   
+@media (max-width: 768px) {
+    .nav{
+        display: absolute;
+    }
+    .navbar .dropdown .dropdown ul {
+      left: -90%;
+    }
+    .navbar .dropdown .dropdown:hover > ul {
+      left: -100%;
+    }
+    
+  }

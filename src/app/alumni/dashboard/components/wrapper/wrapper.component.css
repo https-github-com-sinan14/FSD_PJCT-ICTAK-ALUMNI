@@ -1,0 +1,91 @@
+mat-sidenav-container {
+    height: 200%;
+    overflow:hidden;
+    
+    
+}
+mat-sidenav{
+    height: 100%;
+    width: 18%;
+    
+    
+   
+}
+
+mat-sidenav-container mat-sidenav mat-nav-list .chevron-button,mat-sidenav-container mat-sidenav mat-nav-list .chevron-button1 {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+    right: 0;
+    float: right;
+    position: absolute;
+  }
+  mat-sidenav-container mat-sidenav mat-nav-list .chevron-button.rotated,  mat-sidenav-container mat-sidenav mat-nav-list .chevron-button1.rotated  {
+    transform: rotate(180deg);
+  }
+  
+  mat-list-item{
+ align-self: center;
+  }
+  .left-bg {
+    background: url('../../../../../assets/img/left-bg.png');
+    background-repeat: no-repeat;
+    height: 100px;
+    left: 0;
+    
+    position: relative;
+    margin-left: -2px;
+  }
+  #icon{
+    padding-left: 20px;
+  }
+
+  .contentwrapper{
+      padding-left: 3%;
+      background-color: #f0f3f4;
+  }
+  .photo{
+    display: inline-block;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    vertical-align: middle;
+    overflow: hidden;
+   padding-left: 4%;
+}
+.photo img{
+    width: 100%;
+}
+.my_file{
+  position: absolute;
+  bottom: 0;
+  outline: none;
+  color: transparent;
+  width: 10%;
+  box-sizing: border-box;
+  padding: 15px 120px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.my_file::-webkit-file-upload-button{
+  visibility: hidden;
+}
+.wrapper{
+  height: 150px;
+  width: 150px;
+  position: relative;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  background: url('/assets/img/profileimg.jpg');
+  background-size: 100% 100%;
+  margin: 100px auto;
+  overflow: hidden;
+}
+.my_file::before{
+  content: '\f030';
+  font-family: fontAwesome;
+  font-size: 50px;
+  color: #fff;
+}
+.ctt{
+  background:navy;
+}

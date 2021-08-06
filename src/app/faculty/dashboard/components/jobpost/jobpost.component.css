@@ -1,0 +1,26 @@
+
+input:focus { 
+    outline:none;
+    border-color:#9ecaed;
+    box-shadow:0 0 10px #9ecaed;
+}
+.glowing-border {
+  border: 2px solid #dadada;
+  border-radius: 7px;
+}
+
+.glowing-border:focus { 
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+.jumbotron{
+  background: url("../../../../../assets/img/3d-perspective-style-diamond-shape-white-background_1017-27556.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+}
+#txr{
+background-color:rgb(80, 80, 189);
+width: 30%;
+color: blanchedalmond;
+}

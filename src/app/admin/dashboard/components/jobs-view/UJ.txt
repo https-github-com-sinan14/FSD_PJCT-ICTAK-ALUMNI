@@ -1,0 +1,81 @@
+ //   this.jobdate = this.jobnw.exdate;
+  //  //console.log(this.jobnw.exdate);
+   
+  //   this.diff =  Math.ceil(( Date.parse(this.jobdate) - Date.parse(this.currentDate) ) / 86400000);
+  //   if(this.diff < 0){
+  //     this.disable_btn = false;
+  //     console.log("dis btn");
+      
+  //   }
+  //   else{
+  //     this.disable_btn = true;
+  //     console.log("allw btn");
+  //   }
+
+
+
+  ////////////////////////////////
+
+  export class JobsViewComponent implements OnInit {
+  jobs: JobpostModel[] = [];
+  title:String = "Verify Jobs";
+  job:any
+  job2:any
+  jobnw:any;
+  showjob:boolean = false;
+  myDate = new Date();
+  currentDate:any= new Date();
+  diff:any;
+  jobdate:any;
+  disable_btn:boolean = false;
+  constructor(private router:Router,public _auth:AuthService) {
+    
+  }
+
+  ngOnInit(): void {
+    this._auth.Viewjobs().subscribe((data) =>{
+         
+      this.jobs = JSON.parse(JSON.stringify(data));
+      
+    });
+  
+
+   
+    let jobId: any = localStorage.getItem("JobId");
+    
+   this._auth.getjob(jobId).subscribe((data2) =>{
+    
+    this.jobnw = JSON.parse(JSON.stringify(data2));
+ 
+    });
+  }
+  viewjob(job:any)
+  {
+   
+    localStorage.setItem("ApplyjobId", job._id.toString());
+  
+    console.log(job);
+    
+    this.showjob=true;
+    this.router.navigate(['job']);
+    
+  }
+  Applyjob(job:any)
+  {
+   
+    localStorage.setItem("JobId", job._id.toString());
+  
+    console.log(job);
+    
+    this.router.navigate(['/application-form']);
+    
+  }
+  disabledate(){
+    if(this.diff < 0){
+      console.log("ok");
+      
+      this.disable_btn = false;
+    }
+  }
+
+}

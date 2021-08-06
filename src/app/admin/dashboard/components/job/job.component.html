@@ -1,0 +1,109 @@
+<div class="column">
+ 
+  <div class="item"><p></p>
+      <div class="item"><p></p><a routerLink=""><img src="../../../../../assets/img/back-left-arrow-circular-button-outline.png"></a>
+        <button type="button" class="btn btn-primary btn-floating mx-1">
+          <i class="fab fa-facebook-f"></i>
+        </button>
+    
+        <button type="button" class="btn btn-primary btn-floating mx-1">
+          <i class="fab fa-google"></i>
+        </button>
+    
+        <button type="button" class="btn btn-primary btn-floating mx-1">
+          <i class="fab fa-twitter"></i>
+        </button>
+    
+        <button type="button" class="btn btn-primary btn-floating mx-1">
+          <i class="fab fa-github"></i>
+        </button>                 
+    </div>
+    
+     <table>
+       
+      <tr>
+          <th>{{jobnw.jobtitle}} {{name}}</th>
+         
+          <td>
+              <button class="btn btn-warning" style="cursor:pointer"  routerLink="/alumnipage/application-form" *ngIf="_auth.loggedIn()"
+              (click)="Applyjob(jobnw)"
+              [disabled]= "!disable_btn"
+              style="margin-left: 20px;"> Apply Now</button>
+          </td>
+          <td>
+              <button class="btn btn-warning" style="cursor:pointer"  style="margin-left: 20px;">
+                  <!-- <span class="material-icons">favorite_border</span> -->
+                  <span class="material-icons">bookmark_border</span>
+                  
+              </button>
+          </td>
+          
+      </tr>
+      <tr><td><b>Location:{{jobnw.joblocation}}</b></td>
+          
+          <td><h2>{{jobnw.company}}</h2><span class="heading"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star unchecked"></span></td>
+          
+          <td>{{jobnw.type}}</td>
+          <td></td>
+              
+          
+      </tr>
+      
+      
+      
+      <tr>
+          <td><b>N.o of vaccancy:</b>{{jobnw.nojobs}}</td>
+          <td>Date of Closure:{{jobnw.exdate | date:'dd/MM/yyyy'}}</td>
+          <td>Left Days:{{diff}}</td> 
+            
+        
+         
+      </tr>
+      <tr>
+          <td><b>Job Description:</b>{{jobnw.description}}</td>
+      </tr>
+      <tr>
+          <td>
+              <p><b>Qualification:</b>{{jobnw.qualification}}</p>
+          </td>
+      </tr>
+  </table>
+ 
+ 
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-xl-8 col-lg-10 mx-auto">
+          <div class="card p-4 px-5">
+              <h2 class="font-weight-bold text-white">Stay tuned</h2>
+              <h6 class="text-black-50 mb-5 text-color">Subscribe to our newsletter and never miss our latest news, designs, and product updates.</h6>
+              <div class="form-group bg-white border rounded px-2 py-2 mb-2">
+                  <div class="row">
+                      <div class="col"> <input type="email" name="email" class="form-control pl-3 shadow-none bg-transparent border-0" placeholder="Enter your email address"> </div>
+                      <div class="col-auto"> <button type="submit" class="btn btn-block btn-dark"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>Get notified</button> </div>
+                  </div>
+              </div> <span class="mb-4 text-color">No spam, notifications only about new job posts.</span>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- <div class="item"><p></p>
+    <div class="item"><p>FIRST NAME</p>
+        <input type="text" name="p_fname" [(ngModel)]="jobnw.jobtitle">
+      </div>
+      <div>
+        <input type="text" name="p_fname1" [(ngModel)]="jobnw.company">
+      </div>
+      <div>
+        <input type="text" name="p_fname1" [(ngModel)]="jobnw.requirements">
+      </div>
+  </div> -->
+  <!-- <div id="ty">
+ 
+</div> -->

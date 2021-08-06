@@ -1,0 +1,21 @@
+.photo{
+    display: inline-block;
+    height: 120px;
+    width: 120px;
+    border-radius: 30%;
+    vertical-align: middle;
+    overflow: hidden;
+   padding-left: 4%;
+}
+.photo img{
+    width: 100%;
+}
+#profile{
+    text-align:justify;
+    padding-left: 20%;
+}
+#banner{
+    height:40px;
+    width:900px;
+    background-color: aqua;
+}

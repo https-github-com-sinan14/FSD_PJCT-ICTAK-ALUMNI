@@ -1,0 +1,153 @@
+<ng-container *ngIf="showJobs">
+ <div class="table100 ver3 m-b-110" >
+    <table data-vertable="ver3">
+        <thead>
+            <tr class="row100 head" >
+               
+                <th class="column100 column2" data-column="column2">JOB ID</th>
+                <th class="column100 column3" data-column="column3">JOB TITLE</th>
+                <th class="column100 column4" data-column="column4">COMPANY NAME</th>
+                <th class="column100 column5" data-column="column5">APPLICANT NAME</th>
+                <th class="column100 column6" data-column="column6">EMAIL ID</th>
+                <th class="column100 column7" data-column="column7">CONTACT NO</th>
+                <th class="column100 column8" data-column="column8">QUALIFICATION</th>
+                <th class="column100 column6" data-column="column6">SKILLS</th>
+                <th class="column100 column7" data-column="column7">EXPERIENCE</th>
+                <th class="column100 column8" data-column="column8">JOB POSTED BY</th>
+                <th class="column100 column8" data-column="column8">POST OWNER</th>
+                <th class="column100 column8" data-column="column8">REF EMAIL</th>
+                <th class="column100 column8" data-column="column8">ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+           <ng-container >
+            <tr class="row100" *ngFor="let product of applicants">
+            
+                <td class="column100 column1" data-column="column1">
+                    <!-- Material unchecked -->
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" [(ngModel)]="product.isSelected"
+                            (change)="getProoduct(product.isSelected, product)">
+                        <label class="form-check-label" for="tableMaterialCheck4">{{product.jobId}}</label>
+                    </div>
+                </td>
+                <td class="column100 column2" data-column="column2">{{product.orderdetails.jobtitle}}</td>
+                <td class="column100 column3" data-column="column3">{{product.orderdetails.company}}</td>
+                <td class="column100 column4" data-column="column4">{{product.Applicantfname}} {{product.Applicantlname}}</td>
+                <td class="column100 column5" data-column="column5">{{product.applicant_email}}</td>
+                <td class="column100 column6" data-column="column6">{{product.phone}}</td>
+                <td class="column100 column7" data-column="column7">{{product.qualifications}}</td>
+                <td class="column100 column7" data-column="column7">{{product.skills}}</td>
+                <td class="column100 column7" data-column="column7">{{product.experience}}</td>
+                <td class="column100 column7" data-column="column7">{{product.orderdetails.posted_by}}</td>
+                <td class="column100 column7" data-column="column7">{{product.orderdetails.postOwner}}</td>
+                <td class="column100 column7" data-column="column7">{{product.orderdetails.email}}</td>
+                <td>
+            
+                    <!-- <button class="btn btn-warning" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="editjob(product)"
+                        style="margin-left: 20px;"> APPROVE</button> -->
+                    <button class="btn btn-warning" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="deleteEmployer(product)" style="margin-left: 20px;"> DECLINE</button>
+                </td>
+            </tr>
+            <div><button type="submit" value="Submit" >*Select Checkbox to Approve </button>&nbsp;</div> 
+        </ng-container>
+        </tbody>
+    </table>
+</div>
+</ng-container>
+<br><br><br> 
+<ng-container *ngIf="!showJobs">
+    <h2>No Pending Applicant Verifications</h2>
+    </ng-container>
+<!-- 
+<div class="wrap-table100">
+    <div class="table100 ver1 m-b-110">
+        <table data-vertable="ver1">
+            <thead>
+                <tr class="row100 head">
+                    <th class="column100 column1" data-column="column1"></th>
+                    <th class="column100 column2" data-column="column2">Sunday</th>
+                    <th class="column100 column3" data-column="column3">Monday</th>
+                    <th class="column100 column4" data-column="column4">Tuesday</th>
+                    <th class="column100 column3" data-column="column3">Monday</th>
+                    <th class="column100 column4" data-column="column4">Tuesday</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="row100">
+                   
+                    <td>
+                        
+                             Material unchecked 
+                            <div class="form-check">
+                              <input type="checkbox" class="form-check-input" id="tableMaterialCheck4">
+                              <label class="form-check-label" for="tableMaterialCheck4">Check 4</label>
+                            </div>
+                        
+          
+                    </td>
+                    <td class="column100 column3" data-column="column3">--</td>
+                    <td class="column100 column4" data-column="column4">--</td>
+                    <td class="column100 column5" data-column="column5">8:00 AM</td>
+                    <td class="column100 column6" data-column="column6">--</td>
+                    <td class="column100 column7" data-column="column7">5:00 PM</td>
+                    <td class="column100 column8" data-column="column8">8:00 AM</td>
+                </tr>
+                
+            </tbody>
+        </table> 
+    </div>
+    
+</div> 
+<br>
+<br><br> -->
+
+<!-- <div class="table100 ver6 m-b-110">
+    <table data-vertable="ver6">
+        <thead>
+            <tr class="row100 head">
+                <th class="column100 column1" data-column="column1"></th>
+                <th class="column100 column2" data-column="column2">Sunday</th>
+                <th class="column100 column3" data-column="column3">Monday</th>
+                <th class="column100 column4" data-column="column4">Tuesday</th>
+                <th class="column100 column5" data-column="column5">Wednesday</th>
+                <th class="column100 column6" data-column="column6">Thursday</th>
+                <th class="column100 column7" data-column="column7">Friday</th>
+                <th class="column100 column8" data-column="column8">Saturday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="row100">
+                <td class="column100 column1" data-column="column1">Lawrence Scott</td>
+                <td class="column100 column2" data-column="column2">8:00 AM</td>
+                <td class="column100 column3" data-column="column3">--</td>
+                <td class="column100 column4" data-column="column4">--</td>
+                <td class="column100 column5" data-column="column5">8:00 AM</td>
+                <td class="column100 column6" data-column="column6">--</td>
+                <td class="column100 column7" data-column="column7">5:00 PM</td>
+                <td class="column100 column8" data-column="column8">8:00 AM</td>
+            </tr>
+            <tr class="row100">
+                <td class="column100 column1" data-column="column1">Lawrence Scott</td>
+                <td class="column100 column2" data-column="column2">8:00 AM</td>
+                <td class="column100 column3" data-column="column3">--</td>
+                <td class="column100 column4" data-column="column4">--</td>
+                <td class="column100 column5" data-column="column5">8:00 AM</td>
+                <td class="column100 column6" data-column="column6">--</td>
+                <td class="column100 column7" data-column="column7">5:00 PM</td>
+                <td class="column100 column8" data-column="column8">8:00 AM</td>
+            </tr>
+            <tr class="row100">
+                <td class="column100 column1" data-column="column1">Lawrence Scott</td>
+                <td class="column100 column2" data-column="column2">8:00 AM</td>
+                <td class="column100 column3" data-column="column3">--</td>
+                <td class="column100 column4" data-column="column4">--</td>
+                <td class="column100 column5" data-column="column5">8:00 AM</td>
+                <td class="column100 column6" data-column="column6">--</td>
+                <td class="column100 column7" data-column="column7">5:00 PM</td>
+                <td class="column100 column8" data-column="column8">8:00 AM</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->

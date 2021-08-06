@@ -1,0 +1,58 @@
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav mode="side" opened="true">
+    <mat-nav-list>
+      <div class="left-bg">
+      <mat-list-item>
+         
+        <mat-icon mat-list-icon class="chevron-button sidenav-button" (click)="isExpanded = !isExpanded" [ngClass]="{'rotated': isExpanded}">chevron_right</mat-icon>
+      </mat-list-item>
+       </div>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <div class="photo">
+        <img alt="Profile photo" src="/assets/img/profileimg.jpg"/> </div>
+
+      <mat-list-item  [routerLink]="'dashboard_faculty'">
+        <mat-icon mat-list-icon >home</mat-icon>
+        <span *ngIf="isExpanded">Dashboard</span>
+        <mat-icon mat-list-icon class="chevron-button1 sidenav-button" (click)="isExpanded1 = !isExpanded1" [ngClass]="{'rotated': isExpanded1}">chevron_right</mat-icon>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item [routerLink]="'jobpostt'">
+       
+        <mat-icon mat-list-icon>important_devices</mat-icon>
+        <span *ngIf="isExpanded">Create Job Post</span>  
+        <mat-icon mat-list-icon class="chevron-button1 sidenav-button" (click)="isExpanded1 = !isExpanded1" [ngClass]="{'rotated': isExpanded1}">chevron_right</mat-icon>
+       
+      
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item  [routerLink]="'profile'">
+        <mat-icon mat-list-icon>supervisor_account</mat-icon>
+        <span *ngIf="isExpanded">Edit Profile
+        
+        </span>  
+       
+        
+        <mat-icon mat-list-icon class="chevron-button1 sidenav-button" (click)="isExpanded1 = !isExpanded1" [ngClass]="{'rotated': isExpanded1}">chevron_right</mat-icon>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+      <mat-list-item [routerLink]="'pswd'">
+        <mat-icon mat-list-icon>supervisor_account</mat-icon>
+        <span *ngIf="isExpanded">Change Password</span>
+        <mat-icon mat-list-icon class="chevron-button1 sidenav-button" (click)="isExpanded1 = !isExpanded1" [ngClass]="{'rotated': isExpanded1}">chevron_right</mat-icon>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <div class="content">
+    <mat-toolbar>
+    
+      <h4>Welcome &nbsp;&nbsp;{{this.name}} </h4>
+    </mat-toolbar>
+   
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-sidenav-container>

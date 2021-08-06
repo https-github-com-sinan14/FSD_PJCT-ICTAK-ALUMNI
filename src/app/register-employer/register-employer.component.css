@@ -1,0 +1,9 @@
+#reg{
+    background: url('../../assets/img/3d-perspective-style-diamond-shape-white-background_1017-27556.jpg');
+    padding-top: 3%;
+}
+@media (max-width: 768px) {
+    #reg{
+        padding-top: 16%;
+    }
+}

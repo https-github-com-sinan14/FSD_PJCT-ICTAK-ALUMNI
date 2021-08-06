@@ -1,0 +1,60 @@
+
+<br>
+<div class="table100 ver6 m-b-110">
+    <table data-vertable="ver6"id="excel-table">
+        <thead>
+            <tr class="row100 head">
+                <!-- <th class="column100 column1" data-column="column1"></th> -->
+                <th class="column100 column2" data-column="column2">JOB ID</th>
+                <th class="column100 column3" data-column="column3">APPLICANT NAME</th>
+                <th class="column100 column4" data-column="column4">EMAIL-ID</th>
+                <th class="column100 column5" data-column="column5">CONTACT NO</th>
+                <th class="column100 column6" data-column="column6">QUALIFICATION</th>
+                <th class="column100 column7" data-column="column7">SKILLS</th>
+                <th class="column100 column8" data-column="column8">EXPERIENCE(in YRS)</th>
+                <th class="column100 column8" data-column="column8">RESUME</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="row100" *ngFor="let user of userItem">
+                <td class="column100 column1" data-column="column1">{{user.jobId}}</td>
+                <td class="column100 column2" data-column="column2">{{user.Applicantfname}} {{user.Applicantlname}}</td>
+                <td class="column100 column3" data-column="column3">{{user.applicant_email}}</td>
+                <td class="column100 column4" data-column="column4">{{user.phone}}</td>
+                <td class="column100 column5" data-column="column5">{{user.qualifications}}</td>
+                <td class="column100 column6" data-column="column6">{{user.skills}}</td>
+                <td class="column100 column7" data-column="column7">{{user.experience}}</td>
+                <td class="column100 column8" data-column="column8">
+                    <i class="fa fa-file-pdf-o" style="font-size:36px;color:crimson"></i>
+                    <a download="filename" target="_blank" href="/assets/img/{{user.resume}}">
+                      DOWNLOAD
+                        
+                      </a>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+<br>
+<div style=" margin: auto; width: 50%;">
+    <i class="fa fa-file-excel-o" style="font-size:48px;color:green"></i>
+    
+    <button style="font-size:24px"(click)="exportexcel()" id="excel">Export to Excel<i class="fa fa-file-excel-o"></i></button>
+ 
+</div>
+
+<!-- <table id="excel-table">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+    </tr>
+    <tr *ngFor="let item of userItem">
+      <td>{{item.jobId}}</td>
+      <td>{{item.Applicantfname}}</td>
+      <td>{{item.Applicantlname}}</td>
+      <td>{{item.applicant_email}}</td>
+    </tr>
+  </table> -->
