@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { StringDecoder } = require('string_decoder');
-// mongoose.connect('mongodb://localhost:27017/AlumniDb', {useNewUrlParser: true}, { useUnifiedTopology: true });
-mongoose.connect('mongodb+srv://ictakalumni:ictakalumni@fsd-file.hq5hz.mongodb.net/ICTAKALUMNI?retryWrites=true&w=majority', {useNewUrlParser: true}, { useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/AlumniDb', {useNewUrlParser: true}, { useUnifiedTopology: true });
+
 const Schema = mongoose.Schema;//To Access the schema from Mongoose package
 
 const JobApplicantSchema = new Schema({
